@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 
 export async function before(m, {conn, participants, groupMetadata}) {
   if (!m.messageStubType || !m.isGroup) return !0;
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://i.ibb.co/sJk7RCBc/file.jpg')
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://i.ibb.co/p0JpJ6G/file.jpg')
   let img = await (await fetch(`${pp}`)).buffer()
   let chat = global.db.data.chats[m.chat]
 
@@ -15,7 +15,7 @@ export async function before(m, {conn, participants, groupMetadata}) {
 │ ‹‹ *Welcome* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
 
-await conn.sendAi(m.chat, bienvenida, img, img, m, rcanal)
+await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, m, null, rcanal)
   }
 
   if (chat.bienvenida && m.messageStubType == 28) {
@@ -25,7 +25,7 @@ await conn.sendAi(m.chat, bienvenida, img, img, m, rcanal)
 ┊•*⁀➷ °⭒⭒⭒
 │ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.sendAi(m.chat, bye, img, img, m, rcanal)
+await conn.sendAi(m.chat, bye, img, img, m, null, rcanal)
   }
 
   if (chat.bienvenida && m.messageStubType == 32) {
@@ -35,5 +35,5 @@ await conn.sendAi(m.chat, bye, img, img, m, rcanal)
 ┊•*⁀➷ °⭒⭒⭒
 │ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.sendAi(m.chat, kick, img, img, m, rcanal)
+await conn.sendAi(m.chat, kick, img, img, m, null, rcanal)
 }}
