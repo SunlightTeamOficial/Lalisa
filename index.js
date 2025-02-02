@@ -51,4 +51,4 @@ async function start(files) {
   }
 }
 
-start(['sunlightteam.js.js'])
+start(['sunlightteam.js'])
