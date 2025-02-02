@@ -30,7 +30,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   user.registered = true;
 
   let sn = createHash('md5').update(m.sender).digest('hex');
-  let img = await (await fetch(``)).buffer();
+  let img = await (await fetch(`https://i.ibb.co/p0JpJ6G/file.jpg`)).buffer();
 
   let txt = '*`〤  R E G I S T R O - U S E R`*\n\n'
       txt += `┌  ✩  *Nombre* : ${name}\n`
