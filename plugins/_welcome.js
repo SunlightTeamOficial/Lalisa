@@ -15,7 +15,7 @@ export async function before(m, {conn, participants, groupMetadata}) {
 │ ‹‹ *Welcome* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
 
-await conn.sendAi(m.chat, botname, textbot, bienvenida, img, canal)
+await conn.sendAi(m.chat, botname, textbot, bienvenida, img, m, canal)
   }
 
   if (chat.bienvenida && m.messageStubType == 28) {
@@ -25,7 +25,7 @@ await conn.sendAi(m.chat, botname, textbot, bienvenida, img, canal)
 ┊•*⁀➷ °⭒⭒⭒
 │ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.sendAi(m.chat, botname, textbot, bye, img, canal)
+await conn.sendAi(m.chat, botname, textbot, bye, img, r, canal)
   }
 
   if (chat.bienvenida && m.messageStubType == 32) {
@@ -35,5 +35,5 @@ await conn.sendAi(m.chat, botname, textbot, bye, img, canal)
 ┊•*⁀➷ °⭒⭒⭒
 │ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.sendAi(m.chat, botname, textbot, kick, img, canal)
+await conn.sendAi(m.chat, botname, textbot, kick, img, r, canal)
 }}
