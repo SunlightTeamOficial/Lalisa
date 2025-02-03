@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 export async function before(m, { conn }) {
   if (!m.messageStubType || !m.isGroup) return
 
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://i.ibb.co/p0JpJ6G/file.jpg')
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://i.ibb.co/sJk7RCBc/file.jpg')')
   let img = await (await fetch(pp)).buffer()
 
   let mensajes = {
@@ -31,6 +31,6 @@ export async function before(m, { conn }) {
   }
 
   if ([27, 28, 32].includes(m.messageStubType)) {
-    await conn.sendMessage(m.chat, { image: img, canal caption: mensajes[m.messageStubType] }, { quoted: null })
+    await conn.sendMessage(m.chat, { image: img, caption: mensajes[m.messageStubType] }, { quoted: null })
   }
 }
