@@ -35,5 +35,5 @@ await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal)
 ┊•*⁀➷ °⭒⭒⭒
 │ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.sendAi(m.chat, botname, textbot, kick, img, img, canal)
+await conn.sendMessage(m.chat, img, img, canal)
 }}
