@@ -1,39 +1,30 @@
-import {WAMessageStubType} from '@whiskeysockets/baileys'
+import { WAMessageStubType } from '@whiskeysockets/baileys'
 import fetch from 'node-fetch'
 
-export async function before(m, {conn, participants, groupMetadata}) {
-  if (!m.messageStubType || !m.isGroup) return !0;
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://i.ibb.co/sJk7RCBc/file.jpg')
-  let img = await (await fetch(`${pp}`)).buffer()
+export async function before(m, { conn, participants, groupMetadata }) {
+  if (!m.messageStubType || !m.isGroup) return true
+
+  let who = m.messageStubParameters[0]
+  let taguser = `@${who.split('@')[0]}`
   let chat = global.db.data.chats[m.chat]
+  let defaultImage = 'https://files.catbox.moe/bgtoel.jpg';
+  if (chat.welcome) {
+    let img;
+    try {
+      let pp = await conn.profilePictureUrl(who, 'image');
+      img = await (await fetch(pp)).buffer();
+    } catch {
+      img = await (await fetch(defaultImage)).buffer();
+    }
 
-  if (chat.bienvenida && m.messageStubType == 27) {
-    let bienvenida = `*꒰︵፝֟⏜ᩨ︵ᡴꪫ Welcome User ꒰︵ᩨ⏜︵፝֟𑁯ᰍ*
-
-╭──ׅ─| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱
-┊•*⁀➷ °⭒⭒⭒
-│ ‹‹ *Welcome* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
-╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-
-await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, canal)
+    if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_ADD) {
+      let bienvenida = `👑 *𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨* 𝐀 ${groupMetadata.subject}\n ⚡ ${taguser}\n${global.welcom1}\n ʕ•ᴥ•ʔ 𝐃𝐢𝐬𝐟𝐫𝐢𝐭𝐚 𝐭𝐮 𝐞𝐬𝐭𝐚𝐝𝐢𝐚 𝐞𝐧 𝐞𝐥 𝐠𝐫𝐮𝐩𝐨!\n> ✎ 𝑷𝒖𝒆𝒅𝒆𝒔 𝒖𝒔𝒂𝒓 *#help* 𝒑𝒂𝒓𝒂 𝒗𝒆𝒓 𝒍𝒂 𝒍𝒊𝒔𝒕𝒂 𝒅𝒆 𝒄𝒐𝒎𝒂𝒎𝒅𝒐𝒔.\n https://chat.whatsapp.com/H9Er7VDTtCSGSvGZEUqPVb`
+await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, canal, estilo)
+  } else if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_REMOVE || m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_LEAVE) {
+      let bye = `⚡ *𝐀𝐃𝐈𝐎𝐒* 𝐃𝐄 ${groupMetadata.subject}\n ⚡ ${taguser}\n${global.welcom2}\n ʕ•ᴥ•ʔ 𝐓𝐄 𝐄𝐒𝐏𝐄𝐑𝐀𝐌𝐎𝐒 𝐏𝐑𝐎𝐍𝐓𝐎!\n> ✎ 𝑷𝒖𝒆𝒅𝒆𝒔 𝒖𝒔𝒂𝒓 *#help* 𝒑𝒂𝒓𝒂 𝒗𝒆𝒓 𝒍𝒂 𝒍𝒊𝒔𝒕𝒂 𝒅𝒆 𝒄𝒐𝒎𝒂𝒎𝒅𝒐𝒔.\n https://chat.whatsapp.com/H9Er7VDTtCSGSvGZEUqPVb`
+await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal, estilo)
+  }
   }
 
-  if (chat.bienvenida && m.messageStubType == 28) {
-    let bye = `*꒰︵፝֟⏜ᩨ︵ᡴꪫ Goodbye User ꒰︵ᩨ⏜︵፝֟𑁯ᰍ*
-    
-╭──ׅ─| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱
-┊•*⁀➷ °⭒⭒⭒
-│ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
-╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal)
-  }
-
-  if (chat.bienvenida && m.messageStubType == 32) {
-    let kick = `*꒰︵፝֟⏜ᩨ︵ᡴꪫ Goodbye User ꒰︵ᩨ⏜︵፝֟𑁯ᰍ*
-    
-╭──ׅ─| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱
-┊•*⁀➷ °⭒⭒⭒
-│ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
-╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.sendAi(m.chat, botname, textbot, kick, img, img, canal)
-}}
+  return true
+}
