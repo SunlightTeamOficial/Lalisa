@@ -1,10 +1,10 @@
-import { WAMessageStubType } from '@whiskeysockets/baileys'
+import {WAMessageStubType} from '@whiskeysockets/baileys'
 import fetch from 'node-fetch'
 
-export async function before(m, { conn, participants, groupMetadata }) {
+export async function before(m, {conn, participants, groupMetadata}) {
   if (!m.messageStubType || !m.isGroup) return !0;
   let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://i.ibb.co/sJk7RCBc/file.jpg')
-  let img = await (await fetch(pp)).buffer()
+  let img = await (await fetch(`${pp}`)).buffer()
   let chat = global.db.data.chats[m.chat]
 
   if (chat.bienvenida && m.messageStubType == 27) {
@@ -15,7 +15,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
 │ ‹‹ *Welcome* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
 
-    await conn.sendMessage(m.chat, { image: img, caption: bienvenida }, { quoted: m })
+await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, canal)
   }
 
   if (chat.bienvenida && m.messageStubType == 28) {
@@ -25,8 +25,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
 ┊•*⁀➷ °⭒⭒⭒
 │ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-
-    await conn.sendMessage(m.chat, { image: img, caption: bye }, { quoted: m })
+await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal)
   }
 
   if (chat.bienvenida && m.messageStubType == 32) {
@@ -36,7 +35,5 @@ export async function before(m, { conn, participants, groupMetadata }) {
 ┊•*⁀➷ °⭒⭒⭒
 │ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-
-    await conn.sendMessage(m.chat, { image: img, caption: kick }, { quoted: m })
-  }
-}
+await conn.sendAi(m.chat, botname, textbot, kick, img, img, canal)
+}}
