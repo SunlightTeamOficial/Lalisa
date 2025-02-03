@@ -28,7 +28,7 @@ export async function before(m, { conn }) {
           body: "Únete al canal oficial",
           previewType: 0,
           thumbnail: img, // Usa la misma imagen de perfil
-          sourceUrl: "https://chat.whatsapp.com/tu-enlace-del-canal"
+          sourceUrl: "https://whatsapp.com/channel/0029Vb2NkWWFsn0ghn9mOA2G"
         }
       }
     }, { quoted: null })
