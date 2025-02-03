@@ -15,7 +15,7 @@ export async function before(m, {conn, participants, groupMetadata}) {
 │ ‹‹ *Welcome* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
 
-await conn.sendAi(m.chat, botname, textbot, bienvenida, img, m, null, rcanal)
+await conn.sendAi(m.chat, botname, bienvenida, img, m, rcanal)
   }
 
   if (chat.bienvenida && m.messageStubType == 28) {
@@ -25,7 +25,7 @@ await conn.sendAi(m.chat, botname, textbot, bienvenida, img, m, null, rcanal)
 ┊•*⁀➷ °⭒⭒⭒
 │ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.sendAi(m.chat, botname, textbot, bye, img, m, null, rcanal)
+await conn.sendAi(m.chat, botname, bye, img, m, rcanal)
   }
 
   if (chat.bienvenida && m.messageStubType == 32) {
@@ -35,5 +35,5 @@ await conn.sendAi(m.chat, botname, textbot, bye, img, m, null, rcanal)
 ┊•*⁀➷ °⭒⭒⭒
 │ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
 ╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.sendAi(m.chat, botname, textbot, kick, img, m, null, rcanal)
+await conn.sendAi(m.chat, botname, kick, img, m, rcanal)
 }}
