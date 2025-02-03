@@ -8,17 +8,32 @@ export async function before(m, {conn, participants, groupMetadata}) {
   let chat = global.db.data.chats[m.chat]
 
   if (chat.bienvenida && m.messageStubType == 27) {
-    let bienvenida = `Bienvenido/a *@${m.messageStubParameters[0].split`@`[0]}* al grupo.`
-    await conn.sendAi(m.chat, botname, bienvenida, img, img, canal)
+    let bienvenida = `*꒰︵፝֟⏜ᩨ︵ᡴꪫ Welcome User ꒰︵ᩨ⏜︵፝֟𑁯ᰍ*
+
+╭──ׅ─| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱
+┊•*⁀➷ °⭒⭒⭒
+│ ‹‹ *Welcome* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
+╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
+
+await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, canal)
   }
 
   if (chat.bienvenida && m.messageStubType == 28) {
-    let bye = `*@${m.messageStubParameters[0].split`@`[0]}* ha salido del grupo.`
-    await conn.sendAi(m.chat, botname, bye, img, img, canal)
+    let bye = `*꒰︵፝֟⏜ᩨ︵ᡴꪫ Goodbye User ꒰︵ᩨ⏜︵፝֟𑁯ᰍ*
+    
+╭──ׅ─| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱
+┊•*⁀➷ °⭒⭒⭒
+│ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
+╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
+await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal)
   }
 
   if (chat.bienvenida && m.messageStubType == 32) {
-    let kick = `*@${m.messageStubParameters[0].split`@`[0]}* ha sido eliminado del grupo.`
-    await conn.sendAi(m.chat, botname, kick, img, img, canal)
-  }
-}
+    let kick = `*꒰︵፝֟⏜ᩨ︵ᡴꪫ Goodbye User ꒰︵ᩨ⏜︵፝֟𑁯ᰍ*
+    
+╭──ׅ─| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱
+┊•*⁀➷ °⭒⭒⭒
+│ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
+╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
+await conn.sendAi(m.chat, botname, textbot, kick, img, img, canal)
+}}
