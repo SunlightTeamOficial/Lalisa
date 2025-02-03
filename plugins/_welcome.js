@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 export async function before(m, { conn }) {
   if (!m.messageStubType || !m.isGroup) return
 
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://i.ibb.co/sJk7RCBc/file.jpg')')
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://i.ibb.co/sJk7RCBc/file.jpg')')')
   let img = await (await fetch(pp)).buffer()
 
   let mensajes = {
