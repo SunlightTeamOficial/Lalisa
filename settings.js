@@ -23,7 +23,6 @@ global.packname = ``
 global.author = '{\n "bot": {\n   "name": "LaLisa",\n     "author": "Oso",\n   "status_bot": "active"\n }\n}'
 global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛᴀ... ฅ^•ﻌ•^ฅ*'
 global.botname = 'LaLisa'
-global.textbot = `Powered By Sunlight Team`
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
 global.namechannel = 'Sunlight Team Oficial'
 
