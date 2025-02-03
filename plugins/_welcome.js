@@ -1,39 +1,31 @@
-import {WAMessageStubType} from '@whiskeysockets/baileys'
+import { WAMessageStubType } from '@whiskeysockets/baileys'
 import fetch from 'node-fetch'
 
-export async function before(m, {conn, participants, groupMetadata}) {
-  if (!m.messageStubType || !m.isGroup) return !0;
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://i.ibb.co/sJk7RCBc/file.jpg')
-  let img = await (await fetch(`${pp}`)).buffer()
+export async function before(m, { conn, participants, groupMetadata }) {
+  if (!m.messageStubType || !m.isGroup) return true
+
+  let who = m.messageStubParameters[0]
+  let taguser = `@${who.split('@')[0]}`
   let chat = global.db.data.chats[m.chat]
+  let defaultImage = 'https://files.catbox.moe/xr2m6u.jpg';
 
-  if (chat.bienvenida && m.messageStubType == 27) {
-    let bienvenida = `*꒰︵፝֟⏜ᩨ︵ᡴꪫ Welcome User ꒰︵ᩨ⏜︵፝֟𑁯ᰍ*
+  if (chat.welcome) {
+    let img;
+    try {
+      let pp = await conn.profilePictureUrl(who, 'image');
+      img = await (await fetch(pp)).buffer();
+    } catch {
+      img = await (await fetch(defaultImage)).buffer();
+    }
 
-╭──ׅ─| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱
-┊•*⁀➷ °⭒⭒⭒
-│ ‹‹ *Welcome* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
-╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-
-await conn.(bienvenida, img, img, canal)
+    if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_ADD) {
+      let bienvenida = `🍬 *Bienvenido* a ${groupMetadata.subject}\n ✰ ${taguser}\n${global.welcom1}\n •(=^●ω●^=)• Disfruta tu estadía en el grupo!\n> 🍭 Puedes usar *#help* para ver la lista de comandos.`
+      await conn.sendMessage(m.chat, { image: img, caption: bienvenida, mentions: [who] })
+    } else if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_REMOVE || m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_LEAVE) {
+      let bye = `🍬 *Adiós* De ${groupMetadata.subject}\n ✰ ${taguser}\n${global.welcom2}\n •(=^●ω●^=)• Te esperamos pronto!\n> 🍭 Puedes usar *#help* para ver la lista de comandos.`
+      await conn.sendMessage(m.chat, { image: img, caption: bye, mentions: [who] })
+    }
   }
 
-  if (chat.bienvenida && m.messageStubType == 28) {
-    let bye = `*꒰︵፝֟⏜ᩨ︵ᡴꪫ Goodbye User ꒰︵ᩨ⏜︵፝֟𑁯ᰍ*
-    
-╭──ׅ─| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱
-┊•*⁀➷ °⭒⭒⭒
-│ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
-╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.(bye, img, img, canal)
-  }
-
-  if (chat.bienvenida && m.messageStubType == 32) {
-    let kick = `*꒰︵፝֟⏜ᩨ︵ᡴꪫ Goodbye User ꒰︵ᩨ⏜︵፝֟𑁯ᰍ*
-    
-╭──ׅ─| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱
-┊•*⁀➷ °⭒⭒⭒
-│ ‹‹ *Bye* :: *@${m.messageStubParameters[0].split`@`[0]}⁨*
-╰───| ͜͡  ͜͡ᩙ‎ | ͜͡  ͜͡ᩙ‎ | ͜͡ ꒱`
-await conn.(kick, img, img, canal)
-}}
+  return true
+}
