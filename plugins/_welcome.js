@@ -31,6 +31,6 @@ export async function before(m, { conn }) {
   }
 
   if ([27, 28, 32].includes(m.messageStubType)) {
-    await conn.sendMessage(m.chat, { image: img, caption: mensajes[m.messageStubType] }, { quoted: null })
+    await conn.sendMessage(m.chat, { image: img, canal caption: mensajes[m.messageStubType] }, { quoted: null })
   }
 }
