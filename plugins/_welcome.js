@@ -1,24 +1,19 @@
-import {WAMessageStubType} from '@whiskeysockets/baileys'
-import fetch from 'node-fetch'
+import { WAMessageStubType } from '@whiskeysockets/baileys' import fetch from 'node-fetch'
 
-export async function before(m, {conn, participants, groupMetadata}) {
-  if (!m.messageStubType || !m.isGroup) return !0;
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://tinyurl.com/ylgu47w3')
-  let img = await (await fetch(`${pp}`)).buffer()
-  let chat = global.db.data.chats[m.chat]
+export async function before(m, { conn, participants, groupMetadata }) { if (!m.messageStubType || !m.isGroup) return true
 
-  if (chat.bienvenida && m.messageStubType == 27) {
-    let bienvenida = `┌─★ *${botname}* \n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Bienvenido a\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
+let who = m.messageStubParameters[0] let taguser = @${who.split('@')[0]} let chat = global.db.data.chats[m.chat] let defaultImage = 'https://files.catbox.moe/bgtoel.jpg';
 
-await conn.sendAi(m.chat, textbot, bienvenida, img, img, canal, estilo)
-  }
+if (chat.welcome) { let img; try { let pp = await conn.profilePictureUrl(who, 'image'); img = await (await fetch(pp)).buffer(); } catch { img = await (await fetch(defaultImage)).buffer(); }
 
-  if (chat.bienvenida && m.messageStubType == 28) {
-    let bye = `┌─★ *${botname}* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
-await conn.sendAi(m.chat, textbot, bye, img, img, canal, estilo)
-  }
+if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_ADD) {
+  let bienvenida = `👑 *¡Bienvenido a ${groupMetadata.subject}!* \n\n${taguser}, disfruta tu estadía en el grupo.\n\n Ya somos〘${participants.length}〙 Miembros.\n\n ${global.welcom1}\n\n> Usa *#help* para ver los comandos disponibles.\n https://chat.whatsapp.com/H9Er7VDTtCSGSvGZEUqPVb`
+  await conn.sendMessage(m.chat, { image: img, caption: bienvenida, mentions: [who] })
+} else if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_REMOVE || m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_LEAVE) {
+  let bye = `⚡ *${taguser} ha salido de ${groupMetadata.subject}.*\n\n Sólo quedamos〘 ${participants.length} 〙Miembros.\n\n${global.welcom2}\n\n👻 ¡Esperamos verte de nuevo!\n https://chat.whatsapp.com/H9Er7VDTtCSGSvGZEUqPVb`
+  await conn.sendMessage(m.chat, { image: img, caption: bye, mentions: [who] })
+}
 
-  if (chat.bienvenida && m.messageStubType == 32) {
-    let kick = `┌─★ *${botname}* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
-await conn.sendAi(m.chat, textbot, kick, img, img, canal, estilo)
-}}
+}
+
+return true }
