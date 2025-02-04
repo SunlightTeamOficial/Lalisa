@@ -66,20 +66,16 @@ let handler = async (m, { conn, usedPrefix }) => {
     let muptime = clockString(_muptime)
    let timestamp = speed()
    let latensi = speed() - timestamp
-   let txt = '`乂  I N F O - B O T`\n\n'
-       txt += `│🪷 [ *Moneda* :: *Estrellas ⭐*\n`
-       txt += `│🪷 [ *Prefijo* :: *【  ${usedPrefix}  】*\n`
-       txt += `│🪷 [ *Plugins* :: *${totalf}*\n`
-       txt += `│🪷 [ *Sub-Bots* :: *${totalUsers || '0'}*\n`
-       txt += `│🪷 [ *Plataforma* :: *${platform()}*\n`
-       txt += `│🪷 [ *RAM* :: *${format(totalmem() - freemem())} / ${format(totalmem())}*\n`
-       txt += `│🪷 [ *FreeRAM* :: *${format(freemem())}*\n`
-       txt += `│🪷 [ *Speed* :: *${latensi.toFixed(4)} ms*\n`
-       txt += `│🪷 [ *Comandos Ejecutados* :: *${formatNumber(totalStats)}*\n`
-       txt += `│🪷 [ *Grupos Registrados* :: *${formatNumber(totalchats)}*\n`
-       txt += `│🪷 [ *Registrados* :: *${formatNumber(totalreg)} Usuarios*\n`
-       txt += `╰─────────\n\n`
-       txt += `> 🚩 ${textbot}`
+   let txt = '`❀  I N F O - B O T`\n\n'
+       txt += `│❀ [ *Moneda* :: *Estrellas ⭐*\n`
+       txt += `│❀ [ *Prefijo* :: *【  ${usedPrefix}  】*\n`
+       txt += `│❀ [ *Plugins* :: *${totalf}*\n`
+       txt += `│❀ [ *Sub-Bots* :: *${totalUsers || '0'}*\n`
+       txt += `│❀ [ *Speed* :: *${latensi.toFixed(4)} ms*\n`
+       txt += `│❀ [ *Comandos Ejecutados* :: *${formatNumber(totalStats)}*\n`
+       txt += `│❀ [ *Grupos Registrados* :: *${formatNumber(totalchats)}*\n`
+       txt += `│❀ [ *Registrados* :: *${formatNumber(totalreg)} Usuarios*\n`
+       txt += `╰─────────`
 
 let img = `./storage/img/menu.jpg`
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
