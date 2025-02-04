@@ -5,7 +5,7 @@ let result = await res.json();
 let { name, size, lastUpdate, icon } = result;
 let URL = result.dllink
 let packe = result.package
-> ❀ » Nombre : ${name}
+let texto = ` > ❀ » Nombre : ${name}
 > ❀ » Tamaño : ${size}
 > ❀ » Package : ${packe}
 > ❀ » Actualizado : ${lastUpdate}`
