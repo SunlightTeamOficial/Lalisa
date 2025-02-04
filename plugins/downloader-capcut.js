@@ -4,7 +4,7 @@ import cheerio from "cheerio";
 const handler = async (m, { conn, usedPrefix, command, text }) => {
     if (!text) {
         await m.react('✖️');
-        return m.reply(`*• Ejemplo :* ${usedPrefix + command} *url*`);
+        return m.reply(`❀ *Ejemplo* : ${usedPrefix + command} *url*`);
     }
 
     try {
@@ -13,7 +13,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
 
         if (!result) {
             await m.react('✖');
-            return m.reply('🚩 Ingresa el enlace de Capcut junto al comando.');
+            return m.reply('❀ Ingresa el enlace de Capcut junto al comando.');
         }
 
         const cpt = `*乂  C A P C U T - D L*\n\n✩ *Título* : ${result.title}\n✩ *Fecha* : ${result.date}\n✩ *Usuario* : ${result.pengguna}\n✩ *Me gusta* : ${result.likes}\n✩ *Autor* : ${result.author.name}`;
