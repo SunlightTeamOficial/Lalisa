@@ -2,7 +2,7 @@ import axios from 'axios'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 try {
-if (!text) throw m.reply(`❀ Ingresa el enlace del *Vídeo* o *Imagen* de Pinterest junto al comando.`)
+if (!text) throw m.reply(`❀ Ingresa el enlace del Vídeo o Imagen de *Pinterest* junto al comando.`)
 let res = await axios.get(`https://api-starlights-team.koyeb.app/api/pindl?url=${text}`)
 let { type, url: sms } = res.data
 if (type === 'image') {
