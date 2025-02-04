@@ -5,13 +5,10 @@ let result = await res.json();
 let { name, size, lastUpdate, icon } = result;
 let URL = result.dllink
 let packe = result.package
-let texto = `*❀  𝙰𝙿𝙺  -  𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳*
 > ❀ » Nombre : ${name}
 > ❀ » Tamaño : ${size}
 > ❀ » Package : ${packe}
-> ❀ » Actualizado : ${lastUpdate}
-    
-*- ↻ El archivo se esta enviando espera un momento, soy lenta. . .*`
+> ❀ » Actualizado : ${lastUpdate}`
 await conn.sendFile(m.chat, icon, name + '.jpg', texto, m, null, rcanal)
 
 await conn.sendMessage(m.chat, { document: { url: URL }, mimetype: 'application/vnd.android.package-archive', fileName: name + '.apk', caption: ''}, { quoted: m });
