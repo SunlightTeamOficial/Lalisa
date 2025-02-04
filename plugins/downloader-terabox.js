@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 await m.react('🕓')
   try {
     const result = await terabox(text);
-    if (!result.length) return m.reply('ingresa un url válido.');
+    if (!result.length) return m.reply('❀ ingresa una url de *Terabox* junto al comando.');
 
     for (let i = 0; i < result.length; i++) {
       const { fileName, type, thumb, url } = result[i];
