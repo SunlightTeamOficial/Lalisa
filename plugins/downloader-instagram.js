@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!args[0]) return conn.reply(m.chat,`🚩 Ingresa el enlace del vídeo de Instagram junto al comando.`, m, rcanal)
+if (!args[0]) return conn.reply(m.chat,`❀ Ingresa el enlace del vídeo de Instagram junto al comando.`, m, rcanal)
     
 try {
 let api = await axios.get(`https://restapi.apibotwa.biz.id/api/igdl?url=${args[0]}`)
@@ -29,7 +29,7 @@ await conn.sendFile(m.chat, url, 'instagram.jpg', HS, m)
 console.error(error)    
 }}
     
-handler.command = ['instagramdl', 'igdl']
+handler.command = ['instagramdl', 'igdl', 'ig']
 
 export default handler
 
