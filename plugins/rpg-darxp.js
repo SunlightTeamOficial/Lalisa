@@ -12,7 +12,7 @@ let handler = async (m, { conn, text }) => {
   let exp = xp
   let imt = Math.ceil(xp * impuesto)
   exp += imt
-  if (exp < 1) throw '🚩 Mínimo es 1 💫 XP.*'
+  if (exp < 1) throw '❀ Mínimo es 1 💫 XP.*'
   let users = global.db.data.users
   if (exp > users[m.sender].exp) throw '*💫 XP* insuficiente para transferir.'
   users[m.sender].exp -= exp
