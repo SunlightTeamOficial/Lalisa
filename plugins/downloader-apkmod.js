@@ -5,11 +5,11 @@ let result = await res.json();
 let { name, size, lastUpdate, icon } = result;
 let URL = result.dllink
 let packe = result.package
-let texto = `  *乂  A P K  -  D O W N L O A D*
-    ✩   *Nombre* : ${name}
-    ✩   *Tamaño* : ${size}
-    ✩   *Package* : ${packe}
-    ✩   *Actualizado* : ${lastUpdate}
+let texto = `  *❀  𝙰𝙿𝙺  -  𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳*
+    > ❀ » Nombre : ${name}
+    > ❀ » Tamaño : ${size}
+    > ❀ » Package : ${packe}
+    > ❀ » Actualizado : ${lastUpdate}
     
 *- ↻ El archivo se esta enviando espera un momento, soy lenta. . .*`
 await conn.sendFile(m.chat, icon, name + '.jpg', texto, m, null, rcanal)
