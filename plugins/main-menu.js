@@ -43,7 +43,6 @@ const defaultMenu = {
   header: '*%category*\n',
     body:'| ͜͡☆ᮬ %cmd %islimit %isPremium\n',
    footer: '\n',
-    after: `> [ ✰ ] ${textbot}`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
