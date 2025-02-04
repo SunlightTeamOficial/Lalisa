@@ -6,7 +6,7 @@ let { name, size, lastUpdate, icon } = result;
 let URL = result.dllink
 let packe = result.package
 let texto = `  *❀  𝙰𝙿𝙺  -  𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳*
-    > ❀ » Nombre : ${name}
+> ❀ » Nombre : ${name}
     > ❀ » Tamaño : ${size}
     > ❀ » Package : ${packe}
     > ❀ » Actualizado : ${lastUpdate}
