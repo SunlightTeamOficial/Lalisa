@@ -6,7 +6,7 @@ const { generateWAMessageContent } = baileys;
 
 let handler = async (message, { conn, text }) => {
     if (!text) {
-        return conn.reply(message.chat, ' *🚩 ¿Qué término de búsqueda quieres usar para encontrar imágenes en Pinterest?*', message);
+        return conn.reply(message.chat, '❀ ¿Qué término de búsqueda quieres usar para encontrar *imágenes* en Pinterest?', message);
     }
 
     async function createImageMessage(url) {
@@ -21,7 +21,7 @@ let handler = async (message, { conn, text }) => {
         const { data: response } = await axios.get(`https://rembotapi.vercel.app/api/pinterest?text=${encodeURIComponent(text)}`);
 
         if (!response.success || !Array.isArray(response.images)) {
-            return conn.reply(message.chat, '🚩 *No se encontraron imágenes.*', message);
+            return conn.reply(message.chat, '❀ No se encontraron *imágenes*.', message);
         }
         let images = response.images.map(img => img.imageUrl); 
         if (images.length < 5) {
@@ -48,7 +48,7 @@ let handler = async (message, { conn, text }) => {
                                 text: ' `乂  P I N T E R E S T`'
                             }),
                             header: proto.Message.InteractiveMessage.Header.create({
-                                title: 'Lets Go World',
+                                title: 'Sunlight Team Oficial',
                                 hasMediaAttachment: false
                             }),
                             carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
