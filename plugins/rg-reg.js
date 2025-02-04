@@ -34,7 +34,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   let txt = `> ❀ » Nombre : ${name}\n`
       txt += `> ❀ » Edad : ${age} años\n`
       txt += `> ❀ » Numero de serie\n`
-      txt += `> ❀ ${sn}`
+      txt += `> ❀ » ${sn}`
 
   await conn.sendMessage(m.chat, { text: txt, image: img }, { quoted: m });
   await m.react('✅');
