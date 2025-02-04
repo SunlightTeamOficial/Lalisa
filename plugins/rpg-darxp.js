@@ -4,9 +4,9 @@ let handler = async (m, { conn, text }) => {
   let who
   if (m.isGroup) who = m.mentionedJid[0]
   else who = m.chat
-  if (!who) throw '🚩 Menciona al usuario con *@user.*'
+  if (!who) throw '❀ Menciona al usuario con *@user.*'
   let txt = text.replace('@' + who.split`@`[0], '').trim()
-  if (!txt) throw '🚩 Ingrese la cantidad de *💫 XP* que quiere transferir.'
+  if (!txt) throw '❀ Ingrese la cantidad de *💫 XP* que quiere transferir.'
   if (isNaN(txt)) throw 'Sólo números.'
   let xp = parseInt(txt)
   let exp = xp
