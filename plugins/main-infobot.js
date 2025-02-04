@@ -66,16 +66,15 @@ let handler = async (m, { conn, usedPrefix }) => {
     let muptime = clockString(_muptime)
    let timestamp = speed()
    let latensi = speed() - timestamp
-   let txt = '`❀  I N F O - B O T`\n\n'
-       txt += `│❀ [ *Moneda* :: *Estrellas ⭐*\n`
-       txt += `│❀ [ *Prefijo* :: *【  ${usedPrefix}  】*\n`
-       txt += `│❀ [ *Plugins* :: *${totalf}*\n`
-       txt += `│❀ [ *Sub-Bots* :: *${totalUsers || '0'}*\n`
-       txt += `│❀ [ *Speed* :: *${latensi.toFixed(4)} ms*\n`
-       txt += `│❀ [ *Comandos Ejecutados* :: *${formatNumber(totalStats)}*\n`
-       txt += `│❀ [ *Grupos Registrados* :: *${formatNumber(totalchats)}*\n`
-       txt += `│❀ [ *Registrados* :: *${formatNumber(totalreg)} Usuarios*\n`
-       txt += `╰─────────\n\n`
+   let txt = '`❀  𝙸𝙽𝙵𝙾 - 𝙱𝙾𝚃`\n\n'
+       txt += `> ❀ » Moneda : *Estrellas ⭐*\n`
+       txt += `> ❀ » Prefijo : *【  ${usedPrefix}  】*\n`
+       txt += `> ❀ » Plugins : *${totalf}*\n`
+       txt += `> ❀ » Sub-Bots : *${totalUsers || '0'}*\n`
+       txt += `> ❀ » Speed : *${latensi.toFixed(4)} ms*\n`
+       txt += `> ❀ » Comandos Ejecutados : *${formatNumber(totalStats)}*\n`
+       txt += `> ❀ » Grupos Registrados : *${formatNumber(totalchats)}*\n`
+       txt += `> ❀ » Registrados : *${formatNumber(totalreg)} Usuarios*\n`
 
 let img = `./storage/img/menu.jpg`
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
