@@ -14,7 +14,7 @@ let handler = async (m, { text, command, usedPrefix }) => {
     if (res.status !== 200) throw json;
 
     if (json.items.length > 0) {
-      let txt = '`❀ GITHUB - BÚSQUEDA`\n\n';
+      let txt = '`❀  𝙶𝙸𝚃𝙷𝚄𝙱 - 𝙱𝚄𝚂𝚀𝚄𝙴𝙳𝙰`\n\n';
       
       json.items.forEach((repo, i) => {
         txt += `> ❀ » Nro : ${i + 1}\n`;
