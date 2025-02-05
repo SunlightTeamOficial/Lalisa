@@ -21,7 +21,7 @@ let handler = async (m, { args, usedPrefix, command }) => {
     let repoData = await repoResponse.json()
     let filename = zipResponse.headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
     let type = zipResponse.headers.get('content-type')
-    let img = 'https://i.ibb.co/tLKyhgM/file.png'
+    let img = 'https://i.ibb.co/mVn628N0/file.jpg'
     let txt = `> ❀ » Nombre : ${filename}\n`
        txt += `> ❀ » Repositorio* : ${user}/${sanitizedRepo}\n`
        txt += `> ❀ » Creador : ${repoData.owner.login}\n`
