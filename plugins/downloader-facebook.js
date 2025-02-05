@@ -18,6 +18,8 @@ await conn.sendFile(m.chat, videoUrl, 'Facebook.mp4', `Duración: ${duration}`, 
 console.error(error)    
 }}    
 
+handler.help = ["facebook *<url>*"];
+handler.tags = ["downloader"];
 handler.command = ['facebookdl', 'facebook', 'fb']
 
 export default handler
