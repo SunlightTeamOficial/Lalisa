@@ -9,8 +9,8 @@ let data = await tiktokdl(text)
 console.log(data)
   let start = Date.now();
   let sp = (Date.now() - start) + 'ms'
-  let cap = `*\`乂  C A L I D A D - N O R M A L\`*`
-  let capp = `*\`乂  C A L I D A D - H D\`*`
+  let cap = `*\`❀  𝙲𝙰𝙻𝙸𝙳𝙰𝙳 - 𝙽𝙾𝚁𝙼𝙰𝙻\`*`
+  let capp = `*\`❀  𝙲𝙰𝙻𝙸𝙳𝙰𝙳 - 𝙷𝙳\`*`
   await m.react('🕓');
   await conn.sendMessage(m.chat, {
                     video: {
@@ -34,7 +34,7 @@ await m.react('✅')
   }
 }
 handler.help = ['tiktokhd *<url>*']
-handler.tags = ['dl']
+handler.tags = ['downloader']
 handler.command = /^(tiktokhd)$/i;
 
 export default handler
