@@ -14,10 +14,10 @@ let comentarios = media.metadata.comment || ''
 let mediaUrl = media.url
 
     
-let HS = `✩ *Titulo :* ${titulo}
+let HS = `> ❀ » Titulo : ${titulo}
 
-✩ *Likes :* ${toNum(likes)} 
-✩ *Comentarios :* ${toNum(comentarios)} `
+> ❀ » Likes : ${toNum(likes)} 
+> ❀ » Comentarios : ${toNum(comentarios)} `
       
 if (media.metadata.isVideo) {
 await conn.sendFile(m.chat, mediaUrl[0], 'instagram.mp4', HS, m)
