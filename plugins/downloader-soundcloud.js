@@ -32,6 +32,7 @@ await m.react('✖️');
 handler.help = ['soundcloud *<búsqueda>*']
 handler.tags = ['downloader']
 handler.command = ['soundcloud', 'sound']
+handler.register = true
 
 export default handler
 
