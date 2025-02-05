@@ -90,7 +90,7 @@ if (methodCode && !conn.authState.creds.registered) {
             txt += `> ❀ » 1 : Haga click en los 3 puntos\n`
             txt += `> ❀ » 2 : Toque dispositivos vinculados\n`
             txt += `> ❀ » 3 : Selecciona Vincular con el número de teléfono\n` 
-            txt += `> ❀ » 4 : Escriba el Codigo y listo\n\n`
+            txt += `> ❀ » 4 : Escriba el Codigo y listo`
          await parent.reply(m.chat, txt, m, rcanal)
          await parent.reply(m.chat, codeBot, m)
         rl.close()
