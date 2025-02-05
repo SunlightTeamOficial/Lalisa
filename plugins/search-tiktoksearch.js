@@ -83,8 +83,8 @@ let handler = async (message, { conn, text }) => {
     }
 };
 
-handler.help = ['tiktokdl <url>'];
-handler.tags = ['downloader'];
+handler.help = ['tiktoksearch *<búsqueda>*'];
+handler.tags = ['search'];
 handler.command = ['tiktoksearch','tts','ttsearch'];
 handler.register = true
 
