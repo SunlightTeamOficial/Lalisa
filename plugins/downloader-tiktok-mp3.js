@@ -26,7 +26,7 @@ conn.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key }});
 }
 handler.help = ['tiktokmp3 *<url>*']
-handler.tags = ['dl']
+handler.tags = ['downloader']
 handler.command = /^(tiktokmp3)$/i
 
 export default handler
