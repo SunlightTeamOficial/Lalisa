@@ -13,7 +13,9 @@ await conn.sendFile(m.chat, no_watermark, 'Tiktok.mp4', title, m)
 await conn.sendFile(m.chat, music, 'Tiktok.mp3', null, m)
 } catch (error) {
 console.error(error)    
-}}    
+}}
+handler.help = ['tiktok *<url tt>*']
+handler.tags = ['downloader']
 handler.command = ['tiktok', 'tiktokdl', 'ttdl', 'tt']
 
 export default handler
