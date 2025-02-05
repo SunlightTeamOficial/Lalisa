@@ -91,7 +91,7 @@ const handler = async (m, { conn, text }) => {
 };
 
 handler.help = ["dafont *<url>*"];
-handler.tags = ["dl"];
+handler.tags = ["downloader"];
 handler.command = ["dafont"];
 
 export default handler;
