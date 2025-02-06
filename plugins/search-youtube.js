@@ -6,7 +6,7 @@ import FormData from "form-data";
 import Jimp from "jimp";
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) return m.reply(`• *Ejemplo:* ${usedPrefix + command} elaina edit`);
+    if (!text) return m.reply(`❀ » Ejemplo : ${usedPrefix + command} LaLisa`);
 
   await m.react('🕓')
 
@@ -39,7 +39,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       let pr = await remini(imageB, "enhance")
         push.push({
             body: proto.Message.InteractiveMessage.Body.fromObject({
-                text: `◦ *Título:* ${video.title}\n◦ *Duración:* ${video.timestamp}\n◦ *Vistas:* ${video.views}`
+                text: `> ❀ » Título : ${video.title}\n> ❀ » Duración : ${video.timestamp}\n> ❀ » Vistas : ${video.views}`
             }),
             footer: proto.Message.InteractiveMessage.Footer.fromObject({
                 text: '' 
@@ -78,10 +78,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
                 },
                 interactiveMessage: proto.Message.InteractiveMessage.fromObject({
                     body: proto.Message.InteractiveMessage.Body.create({
-                        text: '*🤍 Resultados de:* ' + `*${text}*`
+                        text: '> ❀ » Resultados de: ' + `*${text}*`
                     }),
                     footer: proto.Message.InteractiveMessage.Footer.create({
-                        text: 'Para descargar, solo desliza sobre los resultados y toca el botón para copiar, y copiaras el comando, solo envialo, y listo! 😁'
+                        text: 'Toca el botón, copiar comando, envialo, y listo!'
                     }),
                     header: proto.Message.InteractiveMessage.Header.create({
                         hasMediaAttachment: false
