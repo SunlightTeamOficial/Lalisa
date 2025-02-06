@@ -9,8 +9,8 @@ let img = await (await fetch(`https://i.ibb.co/gLN5wzF5/file.jpg`)).buffer()
       nombre: "Sunlight Team Oficial",
     },
     {
-      id: "120363229122990393@newsletter",
-      nombre: "Patocinador Cuervo-Team-Supreme",
+      id: "120363387644070749@newsletter",
+      nombre: "Sunlight Team Oficial",
     },
   ]
 
