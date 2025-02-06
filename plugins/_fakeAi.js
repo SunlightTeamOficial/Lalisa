@@ -20,9 +20,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       }
     }
     
-    conn.sendMessage(m.chat, { text: 'Hola soy LaLisa, ¿Cómo puedo ayudarte?' }, { quoted: anu })
+    conn.sendMessage(m.chat, { text: '> *_❒ Hola ¿Cómo puedo ayudarte?_*' }, { quoted: anu })
   } catch (error) {
-    conn.sendMessage(m.chat, 'Hola soy LaLisa, ¿Cómo puedo ayudarte?', 'conversation', { quoted: m })
+    conn.sendMessage(m.chat, '> *_❒ Hola ¿Cómo puedo ayudarte?_*', 'conversation', { quoted: m })
   }
 }
 
