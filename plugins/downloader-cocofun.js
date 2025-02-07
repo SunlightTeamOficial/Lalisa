@@ -3,7 +3,7 @@ import fetch from "node-fetch"
 let handler = async (m, { text, conn, args, usedPrefix, command }) => {
     if (!args[0]) {
         await m.react('✖️')
-        return conn.reply(m.chat, `> *_❒ Ingresa El Link De Applemusic_*`, m, rcanal)
+        return conn.reply(m.chat, `> *_❒ Ingresa El Link De Cocofun_*`, m, rcanal)
     }
     
     try {
@@ -26,8 +26,8 @@ let handler = async (m, { text, conn, args, usedPrefix, command }) => {
     }
 }
 
-handler.help = ['cocofundl *<url>*'];
+handler.help = ['cocofun *<url>*'];
 handler.tags = ['downloader'];
-handler.command = ['cocofundl']
+handler.command = ['cocofun']
 
 export default handler
