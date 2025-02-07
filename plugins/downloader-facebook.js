@@ -13,7 +13,7 @@ let videoUrl = result.find(video => video.quality === "720p (HD)")
              : result.find(video => video.quality === "360p (SD)").url
 
    
-await conn.sendFile(m.chat, videoUrl, 'Facebook.mp4', `Duración: ${duration}`, m, null, rcanal)
+await conn.sendFile(m.chat, videoUrl, 'Facebook.mp4', `> ❀ » Duración : ${duration}`, m, null, rcanal)
 } catch (error) {
 console.error(error)    
 }}    
