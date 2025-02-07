@@ -13,7 +13,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
 
         if (!result) {
             await m.react('✖');
-            return m.reply('❀ Ingresa el enlace de *Capcut* junto al comando.');
+            return conn.reply(m.chat, '❀ Ingresa el enlace de *Capcut* junto al comando.', m, rcanal)
         }
 
         const cpt = `> ❀ » Título : ${result.title}\n> ❀ » Fecha : ${result.date}\n> ❀ » Usuario : ${result.pengguna}\n> ❀ » Me gusta : ${result.likes}\n> ❀ » Autor : ${result.author.name}`;
