@@ -24,9 +24,9 @@ let handler = async (m, { args, usedPrefix, command }) => {
     let img = 'https://i.ibb.co/mVn628N0/file.jpg'
     let txt = `> *_❀ » Nombre : ${filename}_*\n`
        txt += `> *_❀ » Repositorio : ${user}/${sanitizedRepo}_*\n`
-       txt += `> ❀ » Creador : ${repoData.owner.login}\n`
-       txt += `> *_❀ » Descripción : ${repoData.description || 'Sin descripción disponible_*'}\n`
-       txt += `> ❀ » Url : ${args[0]}\n\n`
+       txt += `> *_❀ » Creador : ${repoData.owner.login}_*\n`
+       txt += `> *_❀ » Descripción : ${repoData.description || 'Sin descripción disponible'}_*\n`
+       txt += `> *_❀ » Url : ${args[0]}_*\n\n`
 
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
 await conn.sendFile(m.chat, await zipResponse.buffer(), filename, null, m)
