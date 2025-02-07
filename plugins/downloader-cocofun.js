@@ -3,7 +3,7 @@ import fetch from "node-fetch"
 let handler = async (m, { text, conn, args, usedPrefix, command }) => {
     if (!args[0]) {
         await m.react('✖️')
-        return m.reply("❀ Ingresa el enlace de *Cocofun* junto al comando.")
+        return conn.reply(m.chat, `> *_❒ Ingresa El Link De Applemusic_*`, m, rcanal)
     }
     
     try {
