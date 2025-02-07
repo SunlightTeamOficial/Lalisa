@@ -17,7 +17,7 @@ let mediaUrl = media.url
 let HS = `> *_❀ » Duración: ${duration}_*
       
 if (media.metadata.isVideo) {
-await conn.sendFile(m.chat, mediaUrl[0], 'instagram.mp4', HS, m)
+await conn.sendFile(m.chat, mediaUrl[0], 'instagram.mp4', HS, m, bull, rcanal)
 } else {
 for (let url of mediaUrl) {
 await conn.sendFile(m.chat, url, 'instagram.jpg', HS, m)
