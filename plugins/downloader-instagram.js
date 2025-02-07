@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!args[0]) return conn.reply(m.chat,`❀ Ingresa el enlace del vídeo de *Instagram* junto al comando.`, m, rcanal)
+if (!args[0]) return conn.reply(m.chat,`> *_❒ Ingresa El Link De Instagram_*`, m, rcanal)
     
 try {
 let api = await axios.get(`https://restapi.apibotwa.biz.id/api/igdl?url=${args[0]}`)
@@ -14,8 +14,8 @@ let comentarios = media.metadata.comment || ''
 let mediaUrl = media.url
 
     
-let HS = `> ❀ » Likes : ${toNum(likes)} 
-> ❀ » Comentarios : ${toNum(comentarios)} `
+let HS = `> *_❀ » Likes : ${toNum(likes)}_* 
+> *_❀ » Comentarios : ${toNum(comentarios)}_* `
       
 if (media.metadata.isVideo) {
 await conn.sendFile(m.chat, mediaUrl[0], 'instagram.mp4', HS, m)
