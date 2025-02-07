@@ -2,7 +2,7 @@ let handler = async (m, { text, conn }) => {
     let user = global.db.data.users[m.sender]
     user.afk = + new Date
     user.afkReason = text
-    await conn.reply(m.chat, `❀ Ahora estás ausente hasta que vuelvas a enviar un nuevo mensaje, cuando te intenten tagear el usuario será notificado de tu ausencia con el motivo.\n\n*${conn.getName(m.sender)}* Esta AFK, Motivo *${text ? ': ' + text : ''}*`, m, rcanal)
+    await conn.reply(m.chat, `> *_❒ Ahora Estás Ausente Hasta Que Vuelvas Enviar Un Nuevo Mensaje, Cuando Te Intenten Tagear El Usuario Será Notificado De Tu Ausencia Con El Motivo.\n\n${conn.getName(m.sender)} Esta AFK, Motivo ${text ? ': ' + text : ''}_*`, m, rcanal)
 }
 handler.help = ['afk *<razón>*']
 handler.tags = ['fun']
