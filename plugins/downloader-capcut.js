@@ -16,7 +16,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
             return conn.reply(m.chat, '❀ Ingresa el enlace de *Capcut* junto al comando.', m, rcanal)
         }
 
-        const cpt = `> ❀ » Título : ${result.title}\n> ❀ » Fecha : ${result.date}\n> ❀ » Usuario : ${result.pengguna}\n> ❀ » Me gusta : ${result.likes}\n> ❀ » Autor : ${result.author.name}`;
+        const cpt = `> *_❀ » Título : ${result.title}_*\n> *_❀ » Fecha : ${result.date}_*\n> *_❀ » Usuario : ${result.pengguna}_*\n> *_❀ » Me gusta : ${result.likes}_*\n> *_❀ » Autor : ${result.author.name}_*`;
         await conn.sendFile(m.chat, result.videoUrl, '', cpt, m, {
             thumbnail: await fetch(result.posterUrl).then(res => res.buffer())
         });
