@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-if (!args[0]) throw `\`\`\`> *_❒ Ingresa El Nombre De La App_*\`\`\``
+if (!args[0]) throw `> *_❒ Ingresa El Nombre De La App_*`
 let res = await fetch(`https://api.dorratz.com/v2/apk-dl?text=${args[0]}`);
 let result = await res.json();
 let { name, size, lastUpdate, icon } = result;
