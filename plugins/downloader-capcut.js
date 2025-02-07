@@ -4,7 +4,7 @@ import cheerio from "cheerio";
 const handler = async (m, { conn, usedPrefix, command, text }) => {
     if (!text) {
         await m.react('✖️');
-        return conn.reply(m.chat, `❀ *Ejemplo* : ${usedPrefix + command} *url*`, m, rcanal)
+        return conn.reply(m.chat, `> *_❒ Ingresa El Link De Capcut_*`, m, rcanal)
     }
 
     try {
