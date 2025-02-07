@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!args[0]) return conn.reply(m.chat, `❀ Ingresa el enlace del vídeo de *Facebook* junto al comando.`, m, rcanal)
+if (!args[0]) return conn.reply(m.chat, `> *_❒ Ingresa El Link De Facebook_*`, m, rcanal)
 
 try {
 let api = await axios.get(`https://restapi.apibotwa.biz.id/api/fbdl?url=${args[0]}`)
