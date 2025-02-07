@@ -23,9 +23,9 @@ let handler = async (m, { args, usedPrefix, command }) => {
     let type = zipResponse.headers.get('content-type')
     let img = 'https://i.ibb.co/mVn628N0/file.jpg'
     let txt = `> *_❀ » Nombre : ${filename}_*\n`
-       txt += `> ❀ » Repositorio* : ${user}/${sanitizedRepo}\n`
+       txt += `> *_❀ » Repositorio : ${user}/${sanitizedRepo}_*\n`
        txt += `> ❀ » Creador : ${repoData.owner.login}\n`
-       txt += `> ❀ » Descripción : ${repoData.description || 'Sin descripción disponible'}\n`
+       txt += `> *_❀ » Descripción : ${repoData.description || 'Sin descripción disponible_*'}\n`
        txt += `> ❀ » Url : ${args[0]}\n\n`
 
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
