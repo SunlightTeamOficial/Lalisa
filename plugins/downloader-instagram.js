@@ -14,9 +14,7 @@ let comentarios = media.metadata.comment || ''
 let mediaUrl = media.url
 
     
-let HS = `> ❀ » Titulo : ${titulo}
-
-> ❀ » Likes : ${toNum(likes)} 
+let HS = `> ❀ » Likes : ${toNum(likes)} 
 > ❀ » Comentarios : ${toNum(comentarios)} `
       
 if (media.metadata.isVideo) {
