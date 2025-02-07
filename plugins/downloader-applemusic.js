@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!args[0]) return conn.reply(m.chat, `❀ Ingresa el enlace de *Applemusic* junto al comando.`, m, rcanal)
+if (!args[0]) return conn.reply(m.chat, `> *_❒ Ingresa El Nombre De La Musica Que Quieras Buscar En Applemusic_*`, m, rcanal)
 
 try {
 
