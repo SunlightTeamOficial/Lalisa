@@ -14,7 +14,7 @@ export async function before(m) {
         if (!afkTime || afkTime < 0)
             continue
         let reason = user.afkReason || ''
-        await conn.reply(m.chat, `> *_❒ El Usuario Que Intentas Etiquetar Esta AFK Por La Razón *${reason ? reason : '...'}* Durante *${(new Date - afkTime).toTimeString()}*.`, m)
+        await conn.reply(m.chat, `> *_❒ El Usuario Que Intentas Etiquetar Esta AFK Por La Razón ${reason ? reason : '...'} Durante ${(new Date - afkTime).toTimeString()}_*`, m)
     }
     return true
 }
