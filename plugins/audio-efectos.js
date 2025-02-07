@@ -45,7 +45,7 @@ let handler = async (m, { conn, args, __dirname, usedPrefix, command }) => {
                 })
                 await m.react('✅')
             })
-        } else return conn.reply(m.chat, `❀ Responde al *Audio o Nota de Voz.*`, m, rcanal)
+        } else return conn.reply(m.chat, `> *_❒ Responde Al Audio o Nota De Voz_*`, m, rcanal)
     } catch {
         await m.react('✖️')
     }
