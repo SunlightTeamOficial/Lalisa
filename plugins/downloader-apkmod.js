@@ -6,9 +6,9 @@ let { name, size, lastUpdate, icon } = result;
 let URL = result.dllink
 let packe = result.package
 let texto = `> ❀ » Nombre : ${name}
-> ❀ » Tamaño : ${size}
-> ❀ » Package : ${packe}
-> ❀ » Actualizado : ${lastUpdate}`
+> *_❀ » Tamaño : ${size}_*
+> *_❀ » Package : ${packe}_*
+> *_❀ » Actualizado : ${lastUpdate}_*`
 await conn.sendFile(m.chat, icon, name + '.jpg', texto, m, null, rcanal)
 
 await conn.sendMessage(m.chat, { document: { url: URL }, mimetype: 'application/vnd.android.package-archive', fileName: name + '.apk', caption: ''}, { quoted: m });
