@@ -14,7 +14,7 @@ throw m.reply(`Error`)
 }} catch (error) {
 }}
 handler.tags = ['downloader']
-handler.help = ['pindl <pin url>']
+handler.help = ['pindl *<url>*']
 handler.command = /^(pindl)$/i
 handler.register = true 
 handler.group = true
