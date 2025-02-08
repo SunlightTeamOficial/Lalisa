@@ -109,7 +109,7 @@ case 'despedida':
       break;
 
     default:
-      if (!/[01]/.test(command)) return m.reply(`
+      if (!/[01]/.test(command)) return conn.reply(m.chat,`
 > *_❀ » Tipo : Welcome_*
 > *_❀ » Descripción : Des/Activa La Bienvenida Para Grupos_*
 
@@ -139,7 +139,7 @@ case 'despedida':
 
 > *_❀ » Ejemplo De Uso_*
 > *_❀ » ${usedPrefix + command} welcome_*
-`.trim());
+`, m, rcanal)
       throw false;
   }
 
