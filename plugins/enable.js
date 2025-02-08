@@ -143,7 +143,7 @@ case 'despedida':
       throw false;
   }
 
-  m.reply(`La función *${type}* se *${isEnable ? 'activó' : 'desactivó'}* ${isAll ? 'para este bot' : isUser ? '' : 'para este chat'}`);
+  await conn.reply(m.chat,`La función *${type}* se *${isEnable ? 'activó' : 'desactivó'}* ${isAll ? 'para este bot' : isUser ? '' : 'para este chat'}`, m, rcanal)
 };
 
 handler.help = ['enable', 'disable'];
