@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import axios from 'axios';
 
 let handler = async (m, { conn, command, args, text, usedPrefix }) => {
-if (!text) return conn.reply(m.chat, `❀ Ingrese el nombre de la cancion de *Soundcloud.* junto al comando`, m, rcanal)
+if (!text) return conn.reply(m.chat, `> *_❒ Ingresa El Nombre De La Canción_*`, m, rcanal)
 
 await m.react('🕒');
 try {
