@@ -110,38 +110,35 @@ case 'despedida':
 
     default:
       if (!/[01]/.test(command)) return m.reply(`
-*❀ Ingresa una opción para habilitar o deshabilitar*
+> *_❀ » Tipo : Welcome_*
+> *_❀ » Descripción : Des/Activa La Bienvenida Para Grupos_*
 
-*Lista de opciones*
-*Tipo :* welcome
-*Descripción :* Des/Activa la *Bienvenida* para Grupos
+> *_❀ » Tipo : Despedida_*
+> *_❀ » Descripción : Des/Activa La Despedida Para Grupos_*
 
-*Tipo :* Despedida
-*Descripción :* Des/Activa la *Despedida* para Grupos
+> *_❀ » Tipo : Nsfw_*
+> *_❀ » Descripción : Des/Activa Los Comandos Nsfw Para Grupos_*
 
-*Tipo :* nsfw 
-*Descripción :* Des/Activa los comandos *NSFW* para Grupos
+> *_❀ » Tipo : Antiarabes_*
+> *_❀ » Descripción : Des/Activa El AntiArabes Para Grupos_*
 
-*Tipo :* antiarabes 
-*Descripción :* Des/Activa el *AntiArabes* para Grupos
+> *_❀ » Tipo : antilink_*
+> *_❀ » Descripción : Des/Activa El AntiLink* Para Grupos_*
 
-*Tipo :* antilink 
-*Descripción :* Des/Activa el *AntiLink* para Grupos
+> *_❀ » Tipo : Autoread_*
+> *_❀ » Descripción : Des/Activa El AutoRead* para la Bot_*
 
-*Tipo :* autoread 
-*Descripción :* Des/Activa el *AutoRead* para el Bot
+> *_❀ » Tipo : document_*
+> *_❀ » Descripción : Des/Activa La *Descarga En Documentos Para El Usuario_*
 
-*Tipo :* document 
-*Descripción :* Des/Activa la *Descarga En Documentos* para el Usuario
+> *_❀ » Tipo : Modoadmin_*
+> *_❀ » Descripción : Des/Activa El Modo Solo Administradores Para Grupos_*
 
-*Tipo :* modoadmin 
-*Descripción :* Des/Activa el *Modo Solo Administradores* para Grupos
+> *_❀ » Tipo : Jadibot_*
+> *_❀ » Descripción : Des/Activa El Jadibot Para LA Bot_*
 
-*Tipo :* jadibot
-*Descripción :* Des/Activa el *jadibot* para el Bot
-
-*• Ejemplo:*
-*- ${usedPrefix + command}* welcome
+> *_❀ » Ejemplo De Uso*_
+> *_❀ » ${usedPrefix + command} welcome_*
 `.trim());
       throw false;
   }
