@@ -3,7 +3,7 @@ if (!text) return conn.reply(m.chat,`> *_❒ Ingresa Tu Nombre_*`, m, rcanal)
     let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
     m.reply(teks.replace(/[a-z]/gi, v => {
         return {
-            'a': '> *_❒ ka_*',
+            'a': 'ka',
             'b': 'tsu',
             'c': 'mi',
             'd': 'te',
