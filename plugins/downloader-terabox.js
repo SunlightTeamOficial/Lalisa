@@ -1,6 +1,6 @@
 import axios from 'axios';
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`Ejemplo:\n${usedPrefix + command} https://terabox.com/s/1kReYr_2pyxLZ2c2kEAHF3A`);
+  if (!text) return conn.reply(m.chat,`Ejemplo:\n${usedPrefix + command} https://terabox.com/s/1kReYr_2pyxLZ2c2kEAHF3A`, m, rcanal)
 await m.react('🕓')
   try {
     const result = await terabox(text);
