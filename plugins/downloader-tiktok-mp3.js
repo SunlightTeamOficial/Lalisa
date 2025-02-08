@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import yts from 'yt-search'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) throw m.reply(`❀ Ingresa un enlace del vídeo de *TikTok* junto al comando.`);
+if (!text) return conn.reply(m.chat,`> *_❒ Ingresa El Link De Tiktok_*`, m, rcanal)
 conn.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 
   let d2 = await fetch(`https://eliasar-yt-api.vercel.app/api/search/tiktok?query=${text}`)
