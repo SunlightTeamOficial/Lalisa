@@ -8,7 +8,7 @@ if (!who) return conn.reply(m.chat, '> *_❒ Menciona Al Usuario_*', m, rcanal)
 let name2 = conn.getName(who)
 let name = conn.getName(m.sender)
 
-return conn.reply(m.chat,`*${name}*` + ' está bailando con' + ` *${name2}*` + ' (ﾉ^ヮ^)ﾉ*:・ﾟ✧', m, rcanal)
+return conn.reply(m.chat,`> *_❒${name}` + ' Está Bailando Con' + ` ${name2}` + ' (ﾉ^ヮ^)ﾉ*:・ﾟ✧', m, rcanal)
 }
 handler.help = ['dance *<@user>*']
 handler.tags = ['fun']
