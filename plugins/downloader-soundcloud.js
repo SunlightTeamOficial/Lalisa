@@ -17,9 +17,9 @@ let { link: dl_url, quality, image } = json2;
 
 let audio = await getBuffer(dl_url);
 
-let txt = `> ❀ » Título : ${json[0].title}\n`;
-    txt += `> ❀ » Calidad : ${quality}\n`;
-    txt += `> ❀ » Url : ${url}\n\n`;
+let txt = `> *_❀ » Título : ${json[0].title}_*\n`;
+    txt += `> *_❀ » Calidad : ${quality}_*\n`;
+    txt += `> *_❀ » Url : ${url}_*\n\n`;
 
 await conn.sendFile(m.chat, image, 'thumbnail.jpg', txt, m, null, rcanal);
 await conn.sendMessage(m.chat, { audio: audio, fileName: `${json[0].title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m })
