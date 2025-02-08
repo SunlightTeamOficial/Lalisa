@@ -1,7 +1,5 @@
 let handler = async (m, { conn, command, text }) => {
-return conn.reply(m.chat,`*❤️❤️ MEDIDOR DE AMOR ❤️❤️*
-*El amor de ${text} por ti es de* *${Math.floor(Math.random() * 100)}%* *de un 100%*
-*Deberias pedirle que sea tu  novia/o ?*
+return conn.reply(m.chat,`> *_❒ El Amor De ${text} Por Ti Es De ${Math.floor(Math.random() * 100)}% de un 100%
 `, m, rcanal)
 m.reply(love, null, { mentions: conn.parseMention(love) })}
 handler.help = ['love *@user*']
