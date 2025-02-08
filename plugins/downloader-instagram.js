@@ -26,7 +26,7 @@ await conn.sendFile(m.chat, url, 'instagram.jpg', HS, m, null, rcanal)
 console.error(error)    
 }}
 
-handler.help = ['instagram *<link ig>*']
+handler.help = ['instagram *<url>*']
 handler.tags = ['downloader']
 handler.command = ['instagram', 'igdl', 'ig']
 handler.register = true
