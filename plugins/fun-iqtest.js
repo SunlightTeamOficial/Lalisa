@@ -16,10 +16,10 @@ function pickRandom(list) {
 }
 
 global.iq = [
-'Tu IQ es de: 1',
-'Tu IQ es de: 14',
-'Tu IQ es de: 23',
-'Tu IQ es de: 35',
+return conn.reply(m.chat,'Tu IQ es de: 1', m, rcanal)
+return conn.reply(m.chat,'Tu IQ es de: 14', m, rcanal)
+return conn.reply(m.chat,'Tu IQ es de: 23', m, rcanal)
+return conn.reply(m.chat,'Tu IQ es de: 35', m, rcanal)
 'Tu IQ es de: 41',
 'Tu IQ es de: 50',
 'Tu IQ es de: 67',
