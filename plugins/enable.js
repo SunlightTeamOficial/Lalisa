@@ -135,11 +135,7 @@ case 'despedida':
 > *_❀ » Descripción : Des/Activa El Modo Solo Administradores Para Grupos_*
 
 > *_❀ » Tipo : Jadibot_*
-> *_❀ » Descripción : Des/Activa El Jadibot Para LA Bot_*
-
-> *_❀ » Ejemplo De Uso*_
-> *_❀ » ${usedPrefix + command} welcome_*
-`.trim());
+> *_❀ » Descripción : Des/Activa El Jadibot Para LA Bot_*`
       throw false;
   }
 
