@@ -9,7 +9,7 @@ let json = api.data
 let { title, cover, origin_cover, no_watermark, watermark, music } = json.data.response
     
 
-await conn.sendFile(m.chat, no_watermark, 'Tiktok.mp4', > title, m, null, rcanal)
+await conn.sendFile(m.chat, no_watermark, 'Tiktok.mp4', title, m, null, rcanal)
 await conn.sendFile(m.chat, music, 'Tiktok.mp3', null, m)
 } catch (error) {
 console.error(error)    
