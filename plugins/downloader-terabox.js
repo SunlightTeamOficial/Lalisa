@@ -1,6 +1,6 @@
 import axios from 'axios';
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return conn.reply(m.chat,`Ejemplo:\n${usedPrefix + command} https://terabox.com/s/1kReYr_2pyxLZ2c2kEAHF3A`, m, rcanal)
+  if (!text) return conn.reply(m.chat,`> *_❒ Ingresa El Link De Terabox_*`, m, rcanal)
 await m.react('🕓')
   try {
     const result = await terabox(text);
@@ -8,7 +8,7 @@ await m.react('🕓')
 
     for (let i = 0; i < result.length; i++) {
       const { fileName, type, thumb, url } = result[i];
-      const caption = `> ❀ » Nombre File : ${fileName}\n> ❀ » Formato : ${type}`;
+      const caption = `> *_❀ » Nombre File : ${fileName}_*\n> *_❀ » Formato : ${type}_*`;
 
       await m.react('✅')      
       await conn.sendFile(m.chat, url, fileName, caption, m, false, {
