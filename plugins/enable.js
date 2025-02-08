@@ -123,19 +123,23 @@ case 'despedida':
 > *_❀ » Descripción : Des/Activa El AntiArabes Para Grupos_*
 
 > *_❀ » Tipo : antilink_*
-> *_❀ » Descripción : Des/Activa El AntiLink* Para Grupos_*
+> *_❀ » Descripción : Des/Activa El AntiLink Para Grupos_*
 
 > *_❀ » Tipo : Autoread_*
-> *_❀ » Descripción : Des/Activa El AutoRead* para la Bot_*
+> *_❀ » Descripción : Des/Activa El AutoRead Para La Bot_*
 
 > *_❀ » Tipo : document_*
-> *_❀ » Descripción : Des/Activa La *Descarga En Documentos Para El Usuario_*
+> *_❀ » Descripción : Des/Activa La Descarga En Documentos Para El Usuario_*
 
 > *_❀ » Tipo : Modoadmin_*
 > *_❀ » Descripción : Des/Activa El Modo Solo Administradores Para Grupos_*
 
 > *_❀ » Tipo : Jadibot_*
-> *_❀ » Descripción : Des/Activa El Jadibot Para LA Bot_*`
+> *_❀ » Descripción : Des/Activa El Jadibot Para LA Bot_*
+
+> *_❀ » Ejemplo De Uso_*
+> *_❀ » ${usedPrefix + command} welcome_*
+`.trim());
       throw false;
   }
 
