@@ -38,7 +38,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 };
 
 handler.tags = ['downloader']
-handler.help = ['spotify']
+handler.help = ['spotify *<url>*']
 handler.command = ['spotify']
 //handler.limit = 1
 handler.register = true
