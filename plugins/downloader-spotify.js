@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text || !text.startsWith('http')) {
-    return conn.reply(m.chat, '❀ Ingresa el enlace de *Spotify* junto al comando.', m,rcanal);
+    return conn.reply(m.chat, '> *_❒ Ingresa El Link De Spotify_*', m,rcanal);
   }
 
   await m.react('🕓');
@@ -18,7 +18,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       let durationMinutes = Math.floor(duration / 60000);
       let durationSeconds = ((duration % 60000) / 1000).toFixed(0);
 
-      let caption = `> ❀ » Título : ${title}\n> ❀ » Autor : ${author}\n> ❀ » Duración : ${durationMinutes}:${durationSeconds.padStart(2, '0')}\n> ❀ » Enlace : ${text}`;
+      let caption = `> *_❀ » Título : ${title}_*\n> *_❀ » Autor : ${author}_*\n> *_❀ » Duración : ${durationMinutes}:${durationSeconds.padStart(2, '0')}_*\n> *_❀ » Enlace : ${text}_*`;
 
       await conn.sendFile(m.chat, image, 'cover.jpg', caption, m,rcanal,fake);
 
