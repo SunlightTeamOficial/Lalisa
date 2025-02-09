@@ -1,7 +1,7 @@
 import translate from '@vitalets/google-translate-api'
 import fetch from 'node-fetch'
 const handler = async (m, {text, command, args, usedPrefix}) => {
-  if (!text) return conn.reply(m.chat,`*• Ingresa un texto*\n\n*Ejemplo:*\n*${usedPrefix + command}* Hola bot`, m, rcanal)
+  if (!text) return conn.reply(m.chat,`> *_❒ Ingresa El Texto_*`, m, rcanal)
   try {
     const api = await fetch('https://api.simsimi.net/v2/?text=' + text + '&lc=es');
     const resSimi = await api.json();
@@ -20,7 +20,7 @@ const handler = async (m, {text, command, args, usedPrefix}) => {
       const resu2 = await reis2.json();
       m.reply(resu2[0][0][0]);
     } catch {
-      throw `*LaLisa* | 「 *ERROR* 」\n\nOcurrió un *Error*`;
+      throw `> *_❒ Lo Siento Ocurrió Un Falló_*`;
     }
   }
 };
