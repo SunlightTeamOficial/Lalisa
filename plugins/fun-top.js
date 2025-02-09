@@ -18,18 +18,18 @@ let k = Math.floor(Math.random() * 70);
 let x = `${pickRandom(['🤓','😅','😂','😳','😎', '🥵', '😱', '🤑', '🙄', '💩','🍑','🤨','🥴','🔥','👇🏻','😔', '👀','🌚'])}`
 let l = Math.floor(Math.random() * x.length);
 let vn = `https://hansxd.nasihosting.com/sound/sound${k}.mp3`
-let top = `Top 10
+let top = `> *_❀ » Top 10 ${text}_*
     
-*1. ${user(a)}*
-*2. ${user(b)}*
-*3. ${user(c)}*
-*4. ${user(d)}*
-*5. ${user(e)}*
-*6. ${user(f)}*
-*7. ${user(g)}*
-*8. ${user(h)}*
-*9. ${user(i)}*
-*10. ${user(j)}*`
+> *_❀ » 1 : ${user(a)}_*
+> *_❀ » 2 : ${user(b)}_*
+> *_❀ » 3 : ${user(c)}_*
+> *_❀ » 4 : ${user(d)}_*
+> *_❀ » 5 : ${user(e)}_*
+> *_❀ » 6 : ${user(f)}_*
+> *_❀ » 7 : ${user(g)}_*
+> *_❀ » 8 : ${user(h)}_*
+> *_❀ » 9 : ${user(i)}_*
+> *_❀ » 10 : ${user(j)}_*`
 m.reply(top, null, { mentions: [a, b, c, d, e, f, g, h, i, j]})
 }
 handler.help = handler.command = ['top']
