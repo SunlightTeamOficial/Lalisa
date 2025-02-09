@@ -20,7 +20,7 @@ const handler = async (m, {text, command, args, usedPrefix}) => {
       const resu2 = await reis2.json();
       m.reply(resu2[0][0][0]);
     } catch {
-      throw `*Ai Hoshino* | 「 *ERROR* 」\n\nOcurrió un *Error*`;
+      return conn.reply(m.chat, `> *_❒ Lo Siento Ocurrió Un Falló_*`, m, rcanal)
     }
   }
 };
