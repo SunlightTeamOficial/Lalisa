@@ -8,28 +8,27 @@ let now = new Date()
 let lastUsage = global.db.data.users[m.sender].lastAcet || 0
 if (now - lastUsage < cooldown) {
 let remainingTime = cooldown - (now - lastUsage)
-return m.reply(`⏱️ ¡Espera ${msToTime(remainingTime)} antes de volver a usar el comando!`)
+return conn.reply(m.chat,`> *_❒ Espera ${msToTime(remainingTime)} Antes De Volver Usar El Comando_*`, m, rcanal)
 }
 conn.tekateki = conn.tekateki ? conn.tekateki : {}
 let id = m.chat
 if (id in conn.tekateki) {
-conn.reply(m.chat, 'Todavía hay acertijos sin responder en este chat', conn.tekateki[id][0])
+conn.reply(m.chat, '> *_❒ Todavía Hay Acertijos Sin Responder_*', conn.tekateki[id][0])
 return null
 }
 let tekateki = JSON.parse(fs.readFileSync(`./plugins/_acertijo.json`))
 let json = tekateki[Math.floor(Math.random() * tekateki.length)]
 let _clue = json.response
 let clue = _clue.replace(/[A-Za-z]/g, '_')
-let caption = `
-ⷮ *${json.question}*
-*• Tiempo:* ${(cooldown / 1000).toFixed(2)} segundos
-*• Bono:* +${poin} Exp
+let caption = `${json.question}
+> *_❒ Tiempo : ${(cooldown / 1000).toFixed(2)} Segundos_*
+> *_❒ Bono : +${poin} Exp_*
 `.trim()
 conn.tekateki[id] = [
 await conn.reply(m.chat, caption, m), json, poin,
 setTimeout(async () => {
 if (conn.tekateki[id]) {
-await conn.reply(m.chat, `Se acabó el tiempo!\n*Respuesta:* ${json.response}`, conn.tekateki[id][0])
+await conn.reply(m.chat, `> *_❒ Se Acabó El Tiempo!\n> *_❒ Respuesta : ${json.response}_*`, conn.tekateki[id][0])
 delete conn.tekateki[id]
 }
 }, cooldown)
