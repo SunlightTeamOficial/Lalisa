@@ -29,8 +29,8 @@ let top = `> *_❀ » Top 10 ${text}_*
 > *_❀ » 7 : ${user(g)}_*
 > *_❀ » 8 : ${user(h)}_*
 > *_❀ » 9 : ${user(i)}_*
-> *_❀ » 10 : ${user(j)}_*`, m, rcanal)
-m.reply(top, null, { mentions: [a, b, c, d, e, f, g, h, i, j]})
+> *_❀ » 10 : ${user(j)}_*`
+m.reply(top, m, null, rcanal { mentions: [a, b, c, d, e, f, g, h, i, j]})
 }
 handler.help = handler.command = ['top']
 handler.tags = ['fun']
