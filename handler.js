@@ -28,7 +28,7 @@ export async function handler(chatUpdate) {
         if (!m)
             return
         m.exp = 0
-        m.limit = false
+        m.Monedas = false
         try {
             let user = global.db.data.users[m.sender]
             if (typeof user !== 'object')
@@ -36,10 +36,8 @@ export async function handler(chatUpdate) {
             if (user) {
                 if (!isNumber(user.exp))
                     user.exp = 0
-                if (!isNumber(user.zenis))
-                    user.zenis = 0
-                if (!isNumber(user.limit))
-                    user.limit = 10
+                if (!isNumber(user.Monedas))
+                    user.Monedas = 10
                 if (!('premium' in user)) 
                     user.premium = false
                 if (!user.premium) 
@@ -47,12 +45,12 @@ export async function handler(chatUpdate) {
                 if (!('registered' in user))
                     user.registered = false
                 if (!user.registered) {
-                    if (!('name' in user))
-                        user.name = m.name
-                    if (!isNumber(user.age))
-                        user.age = -1
-                    if (!isNumber(user.regTime))
-                        user.regTime = -1
+                if (!('name' in user))
+                    user.name = m.name
+                if (!isNumber(user.age))
+                    user.age = -1
+                if (!isNumber(user.regTime))
+                    user.regTime = -1
                 }
                 if (!isNumber(user.afk))
                     user.afk = -1
@@ -69,8 +67,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
-                    zenis: 100,
-                    limit: 10,
+                    Monedas: 10,
                     registered: false,
                     name: m.name,
                     age: -1,
@@ -90,30 +87,57 @@ export async function handler(chatUpdate) {
                     chat.isBanned = false
                 if (!('bienvenida' in chat))
                     chat.bienvenida = true 
-                if (!('Despedida'in chat))
-                   chat.despedida = false
-                 if(!('jadibot' in chat)) 
-                   chat.jadibot = false
                 if (!('antiLink' in chat))
                     chat.antiLink = false
+                if (!('antiTiktok' in chat))                             
+                    chat.antiTiktok = false
+                if (!('antiYoutube' in chat)) 
+                    chat.antiYoutube = false
+                if (!('antiTelegram' in chat)) 
+                    chat.antiTelegram = false
+                if (!('antiFacebook' in chat)) 
+                    chat.antiFacebook = false
+                if (!('antiInstagram' in chat)) 
+                    chat.antiInstagram = false
+                if (!('antiTwitter' in chat)) 
+                    chat.antiTwitter = false
+                if (!('antiDiscord' in chat)) 
+                    chat.antiDiscord = false
+                if (!('antiver' in chat))
+                    chat.antiver = false
+                if (!('modoadmin' in chat))
+                    chat.modoadmin = false
+                if (!('autolevelup' in chat))
+                    chat.autolevelup = true
+                if (!('antitoxic' in chat))
+                    chat.antitoxic = false
+                if (!('antispam' in chat))
+                    chat.antispam = false
                 if (!('onlyLatinos' in chat))
                     chat.onlyLatinos = false
                  if (!('nsfw' in chat))
                     chat.nsfw = false
-                 if (!('modoadmin' in chat))
-                     chat.modoadmin = true
                 if (!isNumber(chat.expired))
                     chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
                     bienvenida: true,
-                    despedida: false,
-                    jadibot: false, 
                     antiLink: false,
+                    antiTiktok: false,
+                    antiYoutube: false,
+                    antiTelegram: false,
+                    antiFacebook: false,
+                    antiInstagram: false,
+                    antiTwitter: false,
+                    antiDiscord: false,
+                    antiver: true,
+                    modoadmin: false,
+                    autolevelup: true,
+                    antitoxic: false,
+                    antispam: false,
                     onlyLatinos: false,
                     nsfw: false, 
-                    modoadmin: true,
                     expired: 0, 
                 }
             var settings = global.db.data.settings[this.user.jid]
@@ -304,8 +328,8 @@ export async function handler(chatUpdate) {
                     m.reply('chirrido -_-')
                 else
                     m.exp += xp
-                if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    conn.reply(m.chat, `Se agotaron tus *⭐ Estrellas*`, m, rcanal)
+                if (!isPrems && plugin.Monedas && global.db.data.users[m.sender].Monedas < plugin.Monedas * 1) {
+                    conn.reply(m.chat, `Se agotaron tus *Estrellas ⭐*`, m)
                     continue
                 }
                 let extra = {
@@ -334,7 +358,7 @@ export async function handler(chatUpdate) {
                 try {
                     await plugin.call(this, m, extra)
                     if (!isPrems)
-                        m.limit = m.limit || plugin.limit || false
+                        m.Monedas = m.Monedas || plugin.Monedas || false
                 } catch (e) {
                     m.error = e
                     console.error(e)
@@ -352,8 +376,8 @@ export async function handler(chatUpdate) {
                             console.error(e)
                         }
                     }
-                    if (m.limit)
-                        conn.reply(m.chat, `Utilizaste *${+m.limit}* ⭐`, m, rcanal)
+                    if (m.Monedas)
+                        conn.reply(m.chat, `Utilizaste *${+m.Monedas}* ⭐`, m)
                 }
                 break
             }
@@ -370,7 +394,7 @@ export async function handler(chatUpdate) {
         if (m) {
             if (m.sender && (user = global.db.data.users[m.sender])) {
                 user.exp += m.exp
-                user.limit -= m.limit * 1
+                user.Monedas -= m.Monedas * 1
             }
 
             let stat
@@ -413,8 +437,8 @@ export async function handler(chatUpdate) {
   }
 }
 
-global.dfail = (type, m, conn, usedPrefix) => {
-    let msg = {
+global.dfail = (type, m, conn) => {
+    const lenguajeDK = {
         rowner: `Hola, este comando solo puede ser utilizado por el *Creador* de la Bot.`,
         owner: `Hola, este comando solo puede ser utilizado por el *Creador* de la Bot y *Sub Bots*.`,
         mods: `Hola, este comando solo puede ser utilizado por los *Moderadores* de la Bot.`,
@@ -424,14 +448,13 @@ global.dfail = (type, m, conn, usedPrefix) => {
         admin: `Hola, este comando solo puede ser utilizado por los *Administradores* del Grupo.`,
         botAdmin: `Hola, la bot debe ser *Administradora* para ejecutar este Comando.`,
         unreg: `Hola, para usar este comando debes estar *Registrado.*\n\nUtiliza: *.reg nombre.edad*\n\n_Ejemplo: *.reg Oso.15*_`,
-        restrict: `Hola, esta característica está *deshabilitada.*`  
-    }[type]
-    if (msg) return conn.reply(m.chat, msg, m, rcanal).then(_ => m.react('✖️'))
-}
+        restrict: `Hola, esta característica está *deshabilitada.*`
+}[type]
+    if (lenguajeDK) return conn.reply(m.chat, lenguajeDK, m, rcanal).then(_ => m.react('✖️'))}
 
 let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {
     unwatchFile(file)
     console.log(chalk.magenta("Se actualizo 'handler.js'"))
     if (global.reloadHandler) console.log(await global.reloadHandler())
-})
+}) 
